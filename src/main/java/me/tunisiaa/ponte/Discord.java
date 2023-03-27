@@ -16,7 +16,7 @@ import static me.tunisiaa.ponte.Ponte.sendInServer;
 
 public class Discord extends ListenerAdapter
 {
-    static JDA api = JDABuilder.createDefault("MTA4OTU4NjI1OTI0NjE5NDc0OA.Gi7Q94.buLoce_uh1eOLBg67VBv8BzB5kV2m5x4t3fqFw")
+    static JDA api = JDABuilder.createDefault("TOKEN")
             .addEventListeners(new Discord())
             .enableIntents(GatewayIntent.MESSAGE_CONTENT)
             .build();
