@@ -1,0 +1,6 @@
+name: ponte
+version: '${project.version}'
+main: me.tunisiaa.ponte.Ponte
+authors: [ TuNisiAa ]
+description: Il mio primo plugin
+api-version: 1.19
