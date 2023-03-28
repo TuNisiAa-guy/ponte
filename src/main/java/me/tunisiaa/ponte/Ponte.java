@@ -1,6 +1,5 @@
 package me.tunisiaa.ponte;
 
-import co.aikar.util.JSONUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.entity.Player;
@@ -10,7 +9,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.w3c.dom.ls.LSOutput;
 
 public final class Ponte extends JavaPlugin implements Listener {
     @Override
@@ -35,8 +33,8 @@ public final class Ponte extends JavaPlugin implements Listener {
     public void onPlayerDeath(PlayerDropItemEvent event){
         Player name = event.getPlayer();
         Item item = event.getItemDrop();
-        System.out.println(item.toString());
-        name.sendMessage(String.format("%s, remember to not waste food!", (name.toString().replace("CraftPlayer{name=", "").replace("}", ""))));
+        System.out.println(item.getName());
+        name.sendMessage(name.toString().replace("CraftPlayer{name=", "").replace("}", "") + ", remember to not waste "  + item.getName());
     }
 
     @EventHandler
