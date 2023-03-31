@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.command.Command;
 
 public final class Ponte extends JavaPlugin implements Listener {
     @Override
@@ -17,6 +18,8 @@ public final class Ponte extends JavaPlugin implements Listener {
 
         System.out.println("Hello, fellow player!");
         getServer().getPluginManager().registerEvents(this, this);
+        this.getCommand("tpa").setExecutor(new Tpa());
+        this.getCommand("tpaccept").setExecutor(new Tpaccept());
     }
 
     @EventHandler

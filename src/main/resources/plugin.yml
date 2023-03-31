@@ -4,3 +4,8 @@ main: me.tunisiaa.ponte.Ponte
 authors: [ TuNisiAa ]
 description: Il mio primo plugin
 api-version: 1.19
+commands:
+  tpa:
+    description: Teletrasporto
+    usage: /<command> <target player>
+    permission: ponte.yourcommandpermission
