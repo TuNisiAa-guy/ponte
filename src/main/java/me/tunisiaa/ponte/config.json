@@ -1,0 +1,7 @@
+{
+  "token": "insert-discord-token-here",
+  "discordToMC": true,
+  "MCToDiscord": true,
+  "channelName" : "channel-name",
+  "guildID": "server-ID"
+}

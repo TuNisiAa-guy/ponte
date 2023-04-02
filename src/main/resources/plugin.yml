@@ -1,5 +1,5 @@
 name: ponte
-version: '${project.version}'
+version: '1.0-SNAPSHOT'
 main: me.tunisiaa.ponte.Ponte
 authors: [ TuNisiAa ]
 description: Il mio primo plugin
@@ -8,4 +8,8 @@ commands:
   tpa:
     description: Teletrasporto
     usage: /<command> <target player>
-    permission: ponte.yourcommandpermission
+    permission: bukkit.broadcast
+  tpaccept:
+    description: Accettazione teletrasporto
+    usage: /<command> <target player>
+    permission: bukkit.broadcast

@@ -11,12 +11,32 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.jetbrains.annotations.NotNull;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 import static me.tunisiaa.ponte.Ponte.sendInServer;
 
 public class Discord extends ListenerAdapter
 {
-    static JDA api = JDABuilder.createDefault("TOKEN")
+    static JSONParser parser = new JSONParser();
+    static JSONObject a;
+
+    static {
+        try {
+            a = (JSONObject)parser.parse(new FileReader("config.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static String token = (String)a.get("token");
+    static JDA api = JDABuilder.createDefault(token)
             .addEventListeners(new Discord())
             .enableIntents(GatewayIntent.MESSAGE_CONTENT)
             .build();
